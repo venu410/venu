@@ -1,37 +1,18 @@
-package org.capgemini.demo;
-
-
+package org.cap.demo;
 
 public class TestClass {
 
 	public static void main(String[] args) {
 		
 		
-		if(args.length>0)
-		{
-			System.out.println("Total no of Args:" + args.length);
-			
-			for(String str:args)
-				System.out.println(str);
-		}
+		MyThreadRunnable runnable=new MyThreadRunnable();
 		
+		Thread t1=new Thread(runnable,"first");
+		Thread t2=new Thread(runnable,"second");
 		
-		StaticDemo demo=new StaticDemo();
-		
-		StaticDemo demo1=new StaticDemo();
-		
-		
-		demo.show();
-		
-		StaticDemo.show();
-		
-		/*try {
-			Class.forName("org.capgemini.demo.StaticDemo");
-			
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+		t1.start();
+		t2.start();
+
 	}
 
 }

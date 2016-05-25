@@ -1,42 +1,89 @@
-package org.capgemini.demo;
+package org.cap.demo;
 
-import java.util.Scanner;
+
 
 public class Demo {
-	
-	
-	private double prin=10000;
-	private float years=5;
-	private float rate=7.5f;
-	
-	public double calculateIntrest(){
+
+	public static void main(String[] args) {
 		
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter prin:");
-		double prin=sc.nextDouble();
-		System.out.println("Enter Years:");
-		float year=sc.nextFloat();
-		System.out.println("Enter Intrest Rate:");
-		float rate=sc.nextFloat();
+		ThreadGroup tg1=new ThreadGroup("TrainedFLP");
 		
-		double simplein=prin*year*rate;
+		MultiplicationTable t1=new MultiplicationTable(5,tg1);
+		MultiplicationTable t2=new MultiplicationTable(10,tg1);
+		MultiplicationTable t3=new MultiplicationTable(15,tg1);
 		
-		return simplein;
-		
-	}
 	
-	public double calculateIntrest(double prin){
-		return prin*this.years*this.rate;
+		MultiplicationTable t5=new MultiplicationTable(1);
+		MultiplicationTable t6=new MultiplicationTable(2);
+		MultiplicationTable t7=new MultiplicationTable(3);
 		
-	}
+		//t2.setPriority(18);
+		
+		t1.start();
+		try {
+			t1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		t2.start();
+		t3.start();
+		
+		t5.start();
+		t6.start();
+		t7.start();
+		
+		
+		System.out.println("Active Threads:" + tg1.activeCount());
+		System.out.println("Priority :" + tg1.getMaxPriority());
+		
+		
+		/*
+		Thread de_thread=new Thread(){
+			@Override
+			public void run(){
+				for(int i=0;i<1000000;i++)
+					System.out.println(i);
+			}
+		};
+		
+		de_thread.setDaemon(true);
+		de_thread.start();*/
+		
+		//t3.setPriority(Thread.MAX_PRIORITY);
 	
-	public double calculateIntrest(double prin,float years){
-		System.out.println("Simple interest with 2args" );
-		return prin*years*this.rate;
-	}
+		
+	//t1.start();
+//	t1.start();
+		
 	
-	public double calculateIntrest(double prin, float years, float rate){
-		return prin*years*rate;
+//		t1.run();
+//		t2.run();
+//		t3.run();
+		
+	
+		/*try {
+			t1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		*/
+		//t2.start();
+		
+		/*try {
+			t2.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		
+		
+		//t3.start();
+		
+		
+
 	}
 
 }
