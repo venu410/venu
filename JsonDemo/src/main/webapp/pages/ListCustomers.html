@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="../script/angular.min.js"></script>
+<script type="text/javascript">
+var app=angular.module("myApp",[]);
+
+
+app.controller("myCtlr",function($scope,$http){
+	
+	var url="D:\kumar\JsonDemo\src\main\webapp\pages\customer.txt";
+	
+	$http.get(url)
+	 .success(function(response){
+		$scope.employees=response;
+		console.log($scope.customer);
+	}); 
+	$http.get(url).error(function(errMsg){
+		console.log(errMsg);
+	});
+	
+
+	
+});
+
+
+
+</script>
+</head>
+<body ng-app="myApp">
+
+
+<div ng-controller="myCtlr">
+
+<h1>{{customer-id}}</h1>
+
+<h1>{{customer-firstName}}</h1>
+<h1>{{customer-lastName}}</h1>
+<h1>{{phoneNumber}}</h1>
+<h1>{{city}}</h1>
+<h1>{{Address}}</h1>
+
+	<table>
+	<tr>
+		<th ng-click="sortData('customer-id')">id</th>
+		<th ng-click="sortData('customer-firstName')">firstname</th>
+		<th ng-click="sortData('customer-lastName')">lastname</th>
+		<th ng-click="sortData('phoneNumber')">phoneNumber</th>
+		<th ng-click="sortData('city')">city</th>
+		
+		<th ng-click="sortData('Address')">Address</th>
+		
+	</tr>
+	<tr ng-repeat=" cust in customer | orderBy: myField ">
+		<td>{{cust.customer-id}}</td>
+		<td>{{cust.customer-firstName}}</td>
+		<td>{{cust.customer-lastName}}</td>
+		<td>{{cust.phoneNumber}}</td>
+		<td>{{cust.city}}</td>
+		<td>{{cust.Address}}</td>
+		
+	
+	</tr>
+	
+	
+	
+	</table>
+
+</div>
+
+</body>
+</html>

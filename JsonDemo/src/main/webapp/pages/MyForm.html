@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MyForm Details</title>
+<script type="text/javascript" src="../script/angular.min.js"></script>
+
+<style type="text/css">
+.errMsg{
+	color:red;
+	font-size: 14px;
+	font-weight: bold;
+}
+</style>
+
+<script type="text/javascript">
+var app=angular.module("myApp",[]);
+
+
+
+app.controller("myCtlr",function($scope){
+	 $scope.customer-id="";
+	$scope.customer-firstName="";
+	$scope.customer-lastName=""; 
+	$scope.phoneNumber="";
+	$scope.city="";
+	$scope.Address="";
+	
+});
+
+</script>
+
+</head>
+<body ng-app="myApp">
+
+<form name="customerForm" ng-controller="myCtlr">
+<table>
+<tr>
+<td>customer-id</td>
+
+
+
+</tr>
+
+
+</table>
+
+
+	<tr>
+	
+		<td></td>
+		<td><input type="submit" name="submit" value="Save">
+	</tr>
+	
+	
+</table>
+</form>
+</body>
+</html>

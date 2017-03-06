@@ -1,0 +1,42 @@
+[
+	{
+		"customer-id" : 101,
+		"customer-firstName" : "rajinish",
+		"customer-lastName" : " mishra ",
+		"phoneNumber" : 9948256398,
+		"city" : "Chennai",
+		"Address" : "mahendra world city,veerapuram"
+	},
+	{
+		"customer-id" : 102,
+		"customer-firstName" : "anji",
+		"customer-lastName" : "reddy",
+		"phoneNumber" : 9948257532,
+		"city" : "hyderabad",
+		"Address" : "vanastalipuram,hayathnagar"
+	},
+	{
+		"customer-id" : 103,
+		"customer-firstName" : "karthik",
+		"customer-lastName" : "beli",
+		"phoneNumber" : 914856398,
+		"city" : "pune",
+		"Address" : "park avenue"
+	},
+	{
+		"customer-id" : 104,
+		"customer-firstName" : "zaheer",
+		"customer-lastName" : "khan",
+		"phoneNumber" : 994586147,
+		"city" : "khammam",
+		"Address" : "palvancha"
+	},
+	{
+		"customer-id" : 105,
+		"customer-firstName" : "dashreem",
+		"customer-lastName" : "rabin",
+		"phoneNumber" : 9152698536,
+		"city" : "hyderabad",
+		"Address" : "hi-tech city"
+	}
+]
