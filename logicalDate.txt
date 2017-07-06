@@ -1,2 +1,2 @@
 useLogicalDateOffset=true
-FinacleCoreLogicalDate=10092017
+FinacleCoreLogicalDate=10292017
