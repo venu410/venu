@@ -1,0 +1,29 @@
+<html>
+</head>
+<script src="Y:/javascript/Scheduled date/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="div">
+
+</div>
+
+</body>
+<script>
+
+$(document).ready(function(){
+jQuery.get('https://rawgit.com/venu410/venu/master/logicalDate.txt', function(data) {
+  var dataPieces = data.split(/[\s=]+/);
+  var dateAsString = dataPieces[dataPieces.length-2];
+ var today = new Date(dateAsString.substr(4, 8)+"/"+(dateAsString.substr(0, 2)-1)+"/"+dateAsString.substr(2, 2)).setHours(0);  
+
+  
+    $('#div').html(today + "--------------------------"+new Date(dateAsString.substr(4, 8)+"/"+(dateAsString.substr(0, 2)-1)+"/"+dateAsString.substr(2, 2))+"------------------"+new Date() );
+   }, 'text');
+
+
+});
+
+</script>
+
+</html>
