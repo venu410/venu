@@ -1,0 +1,2 @@
+useLogicalDateOffset=true
+FinacleCoreLogicalDate=10092017
